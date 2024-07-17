@@ -5,19 +5,19 @@ type WordCardProps = {
 };
 
 const WordDetail = ({ word }: WordCardProps) => {
-  const [activeMode, setActiveMode] = useState("explanation");
+  const [activeMode, setActiveMode] = useState("definition");
 
   const modes = [
-    { id: "explanation", label: "Explanation" },
-    { id: "related", label: "Related" },
+    { id: "definition", label: "Definition" },
+    { id: "synonym", label: "Synonym" },
     { id: "derivative", label: "Derivative" },
   ];
 
   const getContent = () => {
     switch (activeMode) {
-      case "explanation":
+      case "definition":
         return "(of language) fluent or persuasive; (of a person) having the ability to speak or write persuasively";
-      case "related":
+      case "synonym":
         return "articulate (明確な), expressive (表現力のある), fluent (流暢な)";
       case "derivative":
         return "eloquently (adv. 雄弁に), eloquence (n. 雄弁), eloquentness (n. 雄弁)";
@@ -44,7 +44,7 @@ const WordDetail = ({ word }: WordCardProps) => {
                     ? "bg-orange-400 text-white"
                     : "bg-white text-custom-primary"
                 }
-                ${id === "explanation" ? "rounded-l-lg" : ""}
+                ${id === "definition" ? "rounded-l-lg" : ""}
                 ${id === "derivative" ? "rounded-r-lg" : ""}
                 hover:bg-orange-400 hover:text-white focus:z-10 focus:ring-2
                 focus:ring-orange-400 focus:text-white transition duration-300
