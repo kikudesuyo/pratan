@@ -6,10 +6,10 @@ const Header = () => {
       </div>
       <div className="flex gap-2">
         <p className="rounded-2xl bg-slate-300 px-4 py-2 text-center font-bold hover:bg-gray-400">
-          ログイン
+          Login
         </p>
         <p className="rounded-2xl bg-slate-300 px-4 py-2 text-center font-bold hover:bg-gray-400">
-          新規登録
+          Signup
         </p>
       </div>
     </header>
