@@ -57,9 +57,9 @@ const WordList = () => {
     word: string;
     explanation: string;
   }) => (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 cursor-pointer border-l-4 border-blue-400">
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 cursor-pointer border-l-4 border-orange-400">
       <h2 className="font-semibold text-center">
-        <p className="text-2xl mb-2 text-blue-500">{word}</p>
+        <p className="text-2xl mb-2 text-orange-500">{word}</p>
         <p className="text-base text-gray-600">{explanation}</p>
       </h2>
     </div>
@@ -72,7 +72,7 @@ const WordList = () => {
         <input
           type="text"
           placeholder="Search for words..."
-          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
