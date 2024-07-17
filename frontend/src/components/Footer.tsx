@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer className="mt-4 text-center">kikudeusyo&eternaL198</footer>;
+  return <footer className="mt-4 text-center">NK</footer>;
 };
 
 export default Footer;
