@@ -6,7 +6,7 @@ import { PATHS } from "@/utils/constants/Paths";
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <header className="sticky top-0 flex h-16 justify-between border-b-2 border-slate-300 bg-white p-3 shadow-md">
+    <header className="sticky top-0 flex justify-between h-16 p-3 bg-white border-b-2 shadow-md border-slate-300">
       <div className="flex flex-col justify-center text-xl font-bold">
         <Link to={PATHS.LANDING}>Pratan📙</Link>
       </div>

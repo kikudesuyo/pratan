@@ -13,7 +13,7 @@ import Signup from "@/pages/Signup";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-blue-50">
+    <div className="flex flex-col min-h-screen bg-blue-50">
       <Router>
         <ScrollToTop />
         <Header />
@@ -21,7 +21,10 @@ function App() {
           <Route path={PATHS.LANDING} element={<Landing />}></Route>
           <Route path={PATHS.LOGIN} element={<Login />} />
           <Route path={PATHS.SIGNUP} element={<Signup />} />
-          <Route path={PATHS.WORDS} element={<WordDetail word="eloquent" />} />
+          <Route
+            path={PATHS.WORDDETAIL}
+            element={<WordDetail word="eloquent" />}
+          />
           <Route path={PATHS.WORDLIST} element={<WordList />} />
         </Routes>
         <Footer />

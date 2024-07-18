@@ -27,8 +27,8 @@ const WordDetail = ({ word }: WordCardProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
-      <h1 className="text-4xl font-bold mb-6 text-center text-custom-primary">
+    <div className="p-6 bg-white rounded-lg shadow-lg">
+      <h1 className="mb-6 text-4xl font-bold text-center text-custom-primary">
         {word}
       </h1>
       <div className="flex justify-center mb-6">
@@ -55,7 +55,7 @@ const WordDetail = ({ word }: WordCardProps) => {
           ))}
         </div>
       </div>
-      <div className="min-h-[200px] p-4 border border-gray-200 rounded bg-gray-50 text-lg">
+      <div className="p-4 text-lg border border-gray-200 rounded min-h-[200px] bg-gray-50">
         {getContent()}
       </div>
     </div>

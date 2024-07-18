@@ -57,18 +57,18 @@ const WordList = () => {
     word: string;
     explanation: string;
   }) => (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 cursor-pointer border-l-4 border-orange-400">
+    <div className="p-6 bg-white border-l-4 border-orange-400 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300">
       <h2 className="font-semibold text-center">
-        <p className="text-2xl mb-2 text-orange-500">{word}</p>
+        <p className="mb-2 text-2xl text-orange-500">{word}</p>
         <p className="text-base text-gray-600">{explanation}</p>
       </h2>
     </div>
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-4 py-8 mx-auto">
       <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Word List</h1>
+        <h1 className="mb-4 text-4xl font-bold text-gray-800">Word List</h1>
         <input
           type="text"
           placeholder="Search for words..."
