@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@/assets/styles/destyle.css";
 
+import Landing from "@/pages/Landing";
 import WordList from "@/pages/WordList";
 import WordDetail from "@/pages/WordDetail";
 import ScrollToTop from "@/utils/ScrollTop";
@@ -12,11 +13,12 @@ import Signup from "@/pages/Signup";
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-blue-50">
       <Router>
         <ScrollToTop />
         <Header />
         <Routes>
+          <Route path={PATHS.LANDING} element={<Landing />}></Route>
           <Route path={PATHS.LOGIN} element={<Login />} />
           <Route path={PATHS.SIGNUP} element={<Signup />} />
           <Route path={PATHS.WORDS} element={<WordDetail word="eloquent" />} />
