@@ -7,7 +7,7 @@ const LandingButton = () => {
   return (
     <Button
       label="Let's start Learning!"
-      style="bg-orange-400 hover:bg-orange-500 py-4 px-8"
+      style="bg-orange-400 hover:bg-orange-500 py-4 px-8 text-xl"
       func={() => {
         navigate(PATHS.LOGIN);
       }}
