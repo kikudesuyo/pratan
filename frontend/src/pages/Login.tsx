@@ -15,10 +15,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <h2 className="mt-6 text-4xl font-extrabold text-center">Login</h2>
+    <div className="flex flex-col items-center justify-center mt-8 gap-8">
+      <h2 className=" text-4xl font-extrabold text-center">Login</h2>
       <img src={LearningLogo} alt="" />
-      <form className="w-4/5 mt-8" onSubmit={handleSubmit}>
+      <form className="w-4/5" onSubmit={handleSubmit}>
         <div className="rounded-md shadow-sm -space-y-px">
           <div>
             <input
@@ -28,7 +28,7 @@ const Login = () => {
               autoComplete="email"
               required
               className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
-              placeholder="メールアドレス"
+              placeholder="e.g.) example@pratan.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -41,7 +41,7 @@ const Login = () => {
               autoComplete="current-password"
               required
               className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
-              placeholder="パスワード"
+              placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
