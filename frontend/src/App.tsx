@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@/assets/styles/destyle.css";
 
-import WordCards from "@/pages/WordCards";
+import WordList from "@/pages/WordList";
 import WordDetail from "@/pages/WordDetail";
 import ScrollToTop from "@/utils/ScrollTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PATHS } from "@/utils/constants/Paths";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
         <ScrollToTop />
         <Header />
         <Routes>
+          <Route path={PATHS.LOGIN} element={<Login />} />
+          <Route path={PATHS.SIGNUP} element={<Signup />} />
           <Route path={PATHS.WORDS} element={<WordDetail word="eloquent" />} />
-          <Route path={PATHS.WORDLIST} element={<WordCards />} />
+          <Route path={PATHS.WORDLIST} element={<WordList />} />
         </Routes>
         <Footer />
       </Router>
