@@ -53,7 +53,7 @@ const Signup = () => {
                 type="password"
                 autoComplete="new-password"
                 required
-                className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
+                className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:z-10 sm:text-sm"
                 placeholder="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -64,7 +64,7 @@ const Signup = () => {
           <div>
             <button
               type="submit"
-              className="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-orange-600 border border-transparent group rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+              className="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-orange-400 border border-transparent group rounded-md hover:bg-orange-500"
             >
               Signup
             </button>
