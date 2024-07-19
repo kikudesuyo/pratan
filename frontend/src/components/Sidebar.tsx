@@ -9,6 +9,7 @@ const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const toggleSidebar = () => setIsOpen(!isOpen);
+  console.log(isOpen);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -45,14 +46,14 @@ const Sidebar: React.FC = () => {
       >
         <div
           ref={sidebarRef}
-          className="fixed right-0 top-0 h-full w-72 bg-gradient-to-b from-yellow-600 to-orange-200 p-6 shadow-xl"
+          className="fixed right-0 top-0 h-full w-72 bg-gray-100 bg-gradient-to-b p-6 shadow-xl"
         >
           <nav className="flex h-full flex-col justify-between">
             <ul className="space-y-6">
               <li>
                 <Link
                   to={PATHS.WORDLIST}
-                  className="flex items-center text-white transition-colors duration-200"
+                  className="flex items-center transition-colors duration-200"
                 >
                   <LoginLogo />
                   <span className="text-lg font-semibold">Home</span>
