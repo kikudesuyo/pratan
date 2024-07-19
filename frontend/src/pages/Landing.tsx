@@ -5,12 +5,12 @@ import { PATHS } from "@/utils/constants/Paths";
 const Landing = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center justify-center mt-8 gap-8">
-      <h1 className=" text-3xl font-bold text-center">
+    <div className="mt-8 flex flex-col items-center justify-center gap-8">
+      <h1 className=" text-center text-3xl font-bold">
         English Vocabulary Explorer
       </h1>
-      <div className="relative flex items-center justify-center w-11/12 bg-white border-4 border-orange-400 rounded-lg shadow-xl h-80">
-        <div className="absolute left-0 right-0 flex justify-around text-3xl text-blue-500 -top-6">
+      <div className="relative flex h-80 w-11/12 items-center justify-center rounded-lg border-4 border-orange-400 bg-white shadow-xl">
+        <div className="absolute inset-x-0 -top-6 flex justify-around text-3xl text-blue-500">
           <span>A</span>
           <span>B</span>
           <span>C</span>
@@ -30,7 +30,7 @@ const Landing = () => {
         label="Let's start learning!"
         func={() => navigate(PATHS.LOGIN)}
       />
-      <p className="max-w-2xl text-lg text-center text-gray-600">
+      <p className="max-w-2xl text-center text-lg text-gray-600">
         Learn new words and their meanings in English! Expand your vocabulary
       </p>
     </div>

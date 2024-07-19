@@ -6,7 +6,7 @@ type Props = {
 const BodyButton = ({ label, func }: Props) => {
   return (
     <button
-      className="bg-orange-400 hover:bg-orange-500 py-4 px-8 text-xl rounded-2xl text-center font-bold min-w-56"
+      className="min-w-56 rounded-2xl bg-orange-400 px-8 py-4 text-center text-xl font-bold hover:bg-orange-500"
       onClick={func}
     >
       {label}

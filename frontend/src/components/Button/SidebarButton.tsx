@@ -6,7 +6,7 @@ const SidebarButton = ({ func }: SidebarProps) => {
   return (
     <button
       className={
-        "rounded-lg text-center font-bold text-white bg-orange-500 px-4"
+        "rounded-lg bg-orange-500 px-4 text-center font-bold text-white"
       }
       onClick={func}
     >

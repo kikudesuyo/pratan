@@ -41,7 +41,7 @@ const Sidebar: React.FC = () => {
       >
         <div
           ref={sidebarRef}
-          className="fixed top-0 right-0 w-64 h-full p-4 bg-white shadow-lg"
+          className="fixed right-0 top-0 h-full w-64 bg-white p-4 shadow-lg"
         >
           <nav>
             <ul>

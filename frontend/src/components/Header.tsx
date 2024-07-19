@@ -14,7 +14,7 @@ const Header = () => {
   }
 
   return (
-    <header className="sticky top-0 flex justify-between h-16 p-3 bg-white border-b-2 shadow-md border-slate-300">
+    <header className="sticky top-0 flex h-16 justify-between border-b-2 border-slate-300 bg-white p-3 shadow-md">
       <div className="flex flex-col justify-center text-xl font-bold">
         <Link to={PATHS.LANDING}>Pratan📙</Link>
       </div>

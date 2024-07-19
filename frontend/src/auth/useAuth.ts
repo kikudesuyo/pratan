@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchData } from "@/api/api";
 
 export const useAuth = () => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

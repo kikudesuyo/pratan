@@ -13,11 +13,11 @@ import Signup from "@/pages/Signup";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-blue-50">
+    <div className="flex min-h-screen flex-col bg-blue-50">
       <Router>
         <ScrollToTop />
         <Header />
-        <div className="flex-grow">
+        <div className="grow">
           <Routes>
             <Route path={PATHS.LANDING} element={<Landing />}></Route>
             <Route path={PATHS.LOGIN} element={<Login />} />

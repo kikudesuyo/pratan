@@ -57,8 +57,8 @@ const WordList = () => {
     word: string;
     explanation: string;
   }) => (
-    <div className="p-6 bg-white border-l-4 border-orange-400 rounded-lg shadow-md cursor-pointer hover:shadow-lg transition duration-300">
-      <h2 className="font-semibold text-center">
+    <div className="cursor-pointer rounded-lg border-l-4 border-orange-400 bg-white p-6 shadow-md transition duration-300 hover:shadow-lg">
+      <h2 className="text-center font-semibold">
         <p className="mb-2 text-2xl text-orange-500">{word}</p>
         <p className="text-base text-gray-600">{explanation}</p>
       </h2>
@@ -66,19 +66,19 @@ const WordList = () => {
   );
 
   return (
-    <div className="container px-4 py-8 mx-auto">
+    <div className="container mx-auto px-4 py-8">
       <header className="mb-8 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-800">Word List</h1>
         <input
           type="text"
           placeholder="Search for words..."
-          className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="w-full rounded border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredWords.map((item) => (
           <WordCard
             key={item.id}

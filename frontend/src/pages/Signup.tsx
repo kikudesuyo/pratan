@@ -15,11 +15,11 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-8 gap-8">
-      <h2 className=" text-4xl font-extrabold text-center">Signup</h2>
+    <div className="mt-8 flex flex-col items-center justify-center gap-8">
+      <h2 className=" text-center text-4xl font-extrabold">Signup</h2>
       <img src={LearningLogo} alt="" />
       <form className="w-4/5" onSubmit={handleSubmit}>
-        <div className="rounded-md shadow-sm -space-y-px">
+        <div className="-space-y-px rounded-md shadow-sm">
           <div>
             <input
               id="email-address"
@@ -27,7 +27,7 @@ const Signup = () => {
               type="email"
               autoComplete="email"
               required
-              className="w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-orange-500 focus:border-orange-500  sm:text-sm"
+              className="w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder:text-gray-500 focus:border-orange-500 focus:outline-none focus:ring-orange-500  sm:text-sm"
               placeholder="e.g.) example@pratan.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +40,7 @@ const Signup = () => {
               type="password"
               autoComplete="current-password"
               required
-              className="w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500  sm:text-sm"
+              className="w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder:text-gray-500 focus:border-orange-500 focus:outline-none focus:ring-orange-500  sm:text-sm"
               placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
