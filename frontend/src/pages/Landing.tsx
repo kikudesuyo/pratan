@@ -1,6 +1,9 @@
-import LandingButton from "@/components/Button/LandingButton";
+import { useNavigate } from "react-router-dom";
+import BodyButton from "@/components/Button/BodyButton";
+import { PATHS } from "@/utils/constants/Paths";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center mt-8 gap-8">
       <h1 className=" text-3xl font-bold text-center">
@@ -23,7 +26,10 @@ const Landing = () => {
           <p>ページ移動出来たら面白そう</p>
         </div>
       </div>
-      <LandingButton />
+      <BodyButton
+        label="Let's start learning!"
+        func={() => navigate(PATHS.LOGIN)}
+      />
       <p className="max-w-2xl text-lg text-center text-gray-600">
         Learn new words and their meanings in English! Expand your vocabulary
       </p>
