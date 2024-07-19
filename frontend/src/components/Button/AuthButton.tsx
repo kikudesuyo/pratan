@@ -1,6 +1,6 @@
 import { Props } from "@/components/Button/types";
 
-const Button = ({ label, style = "", func }: Props) => {
+const AuthButton = ({ label, style = "", func }: Props) => {
   //styleでボタンの色を設定(hover:も設定)
   return (
     <button
@@ -12,4 +12,4 @@ const Button = ({ label, style = "", func }: Props) => {
   );
 };
 
-export default Button;
+export default AuthButton;
