@@ -1,11 +1,15 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import SidebarButton from "@/components/Button/SidebarButton";
 import { Transition } from "@headlessui/react";
+import { PATHS } from "@/utils/constants/Paths";
+import LoginLogo from "@/assets/logo/LoginLogo";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const toggleSidebar = () => setIsOpen(!isOpen);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -41,33 +45,18 @@ const Sidebar: React.FC = () => {
       >
         <div
           ref={sidebarRef}
-          className="fixed right-0 top-0 h-full w-64 bg-white p-4 shadow-lg"
+          className="fixed right-0 top-0 h-full w-72 bg-gradient-to-b from-yellow-600 to-orange-200 p-6 shadow-xl"
         >
-          <nav>
-            <ul>
+          <nav className="flex h-full flex-col justify-between">
+            <ul className="space-y-6">
               <li>
-                <a href="#home" className="block px-4 py-2 hover:bg-gray-200">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="block px-4 py-2 hover:bg-gray-200">
-                  my page
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="block px-4 py-2 hover:bg-gray-200"
+                <Link
+                  to={PATHS.WORDLIST}
+                  className="flex items-center text-white transition-colors duration-200"
                 >
-                  test
-                </a>
-                <a
-                  href="#contact"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  contact
-                </a>
+                  <LoginLogo />
+                  <span className="text-lg font-semibold">Home</span>
+                </Link>
               </li>
             </ul>
           </nav>
