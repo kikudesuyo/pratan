@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Button from "@/components/Button/Button";
 import { PATHS } from "@/utils/constants/Paths";
 import LearningLogo from "@/assets/imgs/leaning-language.jpg";
+import BodyButton from "@/components/Button/BodyButton";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -48,13 +48,8 @@ const Login = () => {
           </div>
         </div>
       </form>
-      <Button
-        label="Login"
-        style="bg-orange-400 hover:bg-orange-500 w-1/2 h-12"
-        func={() => {
-          navigate(PATHS.WORDLIST);
-        }}
-      />
+      <BodyButton label="Login" func={() => navigate(PATHS.WORDLIST)} />
+
       <div className="flex flex-col items-center">
         <p>Don't have an account?</p>
         <Link to={PATHS.SIGNUP} className="font-medium text-orange-400 ">
