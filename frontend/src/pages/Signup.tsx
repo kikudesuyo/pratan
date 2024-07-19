@@ -27,7 +27,7 @@ const Signup = () => {
               type="email"
               autoComplete="email"
               required
-              className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
+              className="w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-orange-500 focus:border-orange-500  sm:text-sm"
               placeholder="e.g.) example@pratan.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +40,7 @@ const Signup = () => {
               type="password"
               autoComplete="current-password"
               required
-              className="relative block w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 focus:z-10 sm:text-sm"
+              className="w-full px-3 py-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-b-md focus:outline-none focus:ring-orange-500 focus:border-orange-500  sm:text-sm"
               placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

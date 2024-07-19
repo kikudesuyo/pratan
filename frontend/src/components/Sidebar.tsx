@@ -52,7 +52,7 @@ const Sidebar: React.FC = () => {
               </li>
               <li>
                 <a href="#about" className="block px-4 py-2 hover:bg-gray-200">
-                  About
+                  my page
                 </a>
               </li>
               <li>
@@ -60,7 +60,13 @@ const Sidebar: React.FC = () => {
                   href="#contact"
                   className="block px-4 py-2 hover:bg-gray-200"
                 >
-                  Contact
+                  test
+                </a>
+                <a
+                  href="#contact"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                >
+                  contact
                 </a>
               </li>
             </ul>
