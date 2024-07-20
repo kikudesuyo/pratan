@@ -18,7 +18,9 @@ type RawWordDetail = {
 
 export const fetchWordDetail = async (word: string): Promise<WordDetail> => {
   const datas = await fetchData(
-    `https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=30f0fcac-b66e-485f-bb60-afab37255bc6`
+    `https://dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${
+      import.meta.env.VITE_DICTIONARYAPI_KEY
+    }`
   );
   const data = datas[0] as RawWordDetail;
   return {
