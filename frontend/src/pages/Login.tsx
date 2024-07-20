@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { PATHS } from "@/utils/constants/Paths";
 import LearningIcon from "@/assets/imgs/leaning-language.jpg";
 import BodyButton from "@/components/Button/BodyButton";
+import LoginIcon from "@/assets/icon/LoginIcon";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,10 @@ const Login = () => {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
-      <h2 className=" text-center text-4xl font-extrabold">Login</h2>
+      <div className="flex gap-2">
+        <LoginIcon size="w-12 h-12" />
+        <h2 className="text-4xl font-extrabold">Login</h2>
+      </div>
       <img src={LearningIcon} alt="" />
       <form className="w-4/5" onSubmit={handleSubmit}>
         <div className="-space-y-px rounded-md shadow-sm">
