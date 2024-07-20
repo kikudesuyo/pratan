@@ -5,7 +5,8 @@ import StartScreen from "@/components/WordTest/StartScreen";
 import { Question } from "@/components/WordTest/types";
 
 const WordTest: React.FC = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(-1); // -1 represents the start screen
+  const [currentQuestion, setCurrentQuestion] = useState(0); // -1 represents the start screen
+  const [isStart, setIsStart] = useState(false);
   const [isShowResult, setIsShowResult] = useState(false);
   const [score, setScore] = useState(0);
 
@@ -24,7 +25,7 @@ const WordTest: React.FC = () => {
   ];
 
   const handleStart = () => {
-    setCurrentQuestion(0);
+    setIsStart(true);
   };
 
   const handleAnswer = (isCorrect: boolean) => {
@@ -41,8 +42,9 @@ const WordTest: React.FC = () => {
   };
 
   const restartQuiz = () => {
-    setCurrentQuestion(-1);
+    setCurrentQuestion(0);
     setIsShowResult(false);
+    setIsStart(false);
     setScore(0);
   };
 
@@ -53,23 +55,23 @@ const WordTest: React.FC = () => {
       </header>
 
       <div className="mx-auto max-w-2xl">
-        {currentQuestion === -1 ? (
+        {!isStart ? (
           <StartScreen
             onStart={handleStart}
             totalQuestions={questions.length}
           />
-        ) : isShowResult ? (
-          <Result
-            score={score}
-            totalQuestions={questions.length}
-            onRestart={restartQuiz}
-          />
-        ) : (
+        ) : !isShowResult ? (
           <Questions
             question={questions[currentQuestion]}
             currentQuestion={currentQuestion}
             totalQuestions={questions.length}
             onAnswer={handleAnswer}
+          />
+        ) : (
+          <Result
+            score={score}
+            totalQuestions={questions.length}
+            onRestart={restartQuiz}
           />
         )}
       </div>
