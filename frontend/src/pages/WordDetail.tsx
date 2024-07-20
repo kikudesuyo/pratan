@@ -41,7 +41,7 @@ const WordDetail = ({ word }: WordCardProps) => {
                 ${id === "definition" ? "rounded-l-lg" : ""}
                 ${id === "derivative" ? "rounded-r-lg" : ""}
                 transition duration-300 hover:bg-orange-400 hover:text-white
-                focus:z-10 focus:text-white focus:ring-2 focus:ring-orange-400
+              focus:text-white focus:ring-2 focus:ring-orange-400
               `}
             >
               {label}

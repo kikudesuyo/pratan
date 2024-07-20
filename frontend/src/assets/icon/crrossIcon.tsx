@@ -1,7 +1,9 @@
-const SignupLogo = () => {
+import { Size } from "@/assets/icon/type";
+
+const CrossIcon = ({ size }: Size) => {
   return (
     <svg
-      className="mr-4 size-6"
+      className={size}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -11,10 +13,9 @@ const SignupLogo = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+        d="M6 18L18 6M6 6l12 12"
       />
     </svg>
   );
 };
-
-export default SignupLogo;
+export default CrossIcon;
