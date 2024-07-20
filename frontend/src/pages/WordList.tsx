@@ -72,7 +72,7 @@ const WordList = () => {
         <input
           type="text"
           placeholder="Search for words..."
-          className="w-full appearance-none  rounded-md border border-gray-300 bg-white p-2 focus:outline-none focus:ring-orange-500 "
+          className="w-4/5 appearance-none  rounded-md border border-gray-300 bg-white p-2 focus:border-orange-500 focus:outline-none focus:ring-orange-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
