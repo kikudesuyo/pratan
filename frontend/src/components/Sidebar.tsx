@@ -78,7 +78,7 @@ const Sidebar: React.FC = () => {
           <div className="flex flex-col gap-8">
             <NavLink
               className="block border-b py-2 text-white hover:text-gray-300"
-              to="/"
+              to={PATHS.WORDLIST}
               onClick={closeMenu}
             >
               <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ const Sidebar: React.FC = () => {
             </NavLink>
             <NavLink
               className="block border-b py-2 text-white hover:text-gray-300"
-              to={PATHS.WORDDETAIL}
+              to={PATHS.WORDTEST}
               onClick={closeMenu}
             >
               <div className="flex items-center gap-2">
@@ -98,7 +98,7 @@ const Sidebar: React.FC = () => {
             </NavLink>
             <NavLink
               className="block flex-1 border-b py-2 text-white hover:text-gray-300"
-              to={PATHS.WORDDETAIL}
+              to={PATHS.LANDING}
               onClick={closeMenu}
             >
               <div className="flex items-center gap-2">

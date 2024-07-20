@@ -18,7 +18,7 @@ const Login = () => {
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
-      <div className="flex gap-2">
+      <div className="mb-8 flex gap-2">
         <LoginIcon size="w-12 h-12" />
         <h2 className="text-4xl font-extrabold">Login</h2>
       </div>
