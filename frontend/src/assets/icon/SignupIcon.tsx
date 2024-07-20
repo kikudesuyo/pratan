@@ -1,7 +1,9 @@
-const SignupLogo = () => {
+import { Size } from "@/assets/icon/type";
+
+const SignupIcon = ({ size }: Size) => {
   return (
     <svg
-      className="mr-4 size-6"
+      className={size}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -17,4 +19,4 @@ const SignupLogo = () => {
   );
 };
 
-export default SignupLogo;
+export default SignupIcon;

@@ -1,7 +1,9 @@
-const TestLogo = () => {
+import { Size } from "@/assets/icon/type";
+
+const TestIcon = ({ size }: Size) => {
   return (
     <svg
-      className="mr-4 size-6"
+      className={size}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -16,4 +18,4 @@ const TestLogo = () => {
     </svg>
   );
 };
-export default TestLogo;
+export default TestIcon;

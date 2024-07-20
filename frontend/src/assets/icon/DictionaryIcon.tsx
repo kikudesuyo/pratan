@@ -1,7 +1,9 @@
-const DictionaryLogo = () => {
+import { Size } from "@/assets/icon/type";
+
+const DictionaryIcon = ({ size }: Size) => {
   return (
     <svg
-      className="mr-4 size-6"
+      className={size}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -16,4 +18,4 @@ const DictionaryLogo = () => {
     </svg>
   );
 };
-export default DictionaryLogo;
+export default DictionaryIcon;
