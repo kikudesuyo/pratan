@@ -4,6 +4,7 @@ import { PATHS } from "@/utils/constants/Paths";
 import LearningIcon from "@/assets/imgs/leaning-language.jpg";
 import BodyButton from "@/components/Button/BodyButton";
 import LoginIcon from "@/assets/icon/LoginIcon";
+import AuthInput from "@/components/Input/AuthInput";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,34 +24,12 @@ const Login = () => {
       </div>
       <img src={LearningIcon} alt="" />
       <form className="w-4/5" onSubmit={handleSubmit}>
-        <div className="-space-y-px rounded-md shadow-sm">
-          <div>
-            <input
-              id="email-address"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              className="w-full rounded-none rounded-t-md border border-gray-300 bg-white px-3 py-2 placeholder:text-gray-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
-              placeholder="e.g.) example@pratan.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              className=" w-full appearance-none rounded-none rounded-b-md border border-gray-300 bg-white px-3 py-2 placeholder:text-gray-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
-              placeholder="your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-        </div>
+        <AuthInput
+          email={email}
+          password={password}
+          setEmail={setEmail}
+          setPassword={setPassword}
+        />
       </form>
       <BodyButton label="Login" func={() => navigate(PATHS.WORDLIST)} />
 
