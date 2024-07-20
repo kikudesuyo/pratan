@@ -47,7 +47,7 @@ const WordList = () => {
   ];
 
   const filteredWords = wordList.filter((item) =>
-    item.word.toLowerCase().includes(searchTerm.toLowerCase())
+    item.word.toLowerCase().startsWith(searchTerm.toLowerCase())
   );
 
   const WordCard = ({
