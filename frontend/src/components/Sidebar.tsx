@@ -33,7 +33,7 @@ const Sidebar: React.FC = () => {
       height: "100%",
     },
     bmMenu: {
-      background: "#ffaf7d",
+      background: "#fb923c",
       padding: "2.5em 1.5em 0",
       fontSize: "1.15em",
     },
