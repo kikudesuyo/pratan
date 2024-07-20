@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchData } from "@/api/api";
+// import { fetchData } from "@/utils/api";
 
 export const useAuth = () => {
   const [user, setUser] = useState<unknown>(null);
@@ -8,9 +8,10 @@ export const useAuth = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetchData("http://hogehoge", {
-          withCredentials: true,
-        });
+        // const response = await fetchData("http://hogehoge", {
+        //   withCredentials: true,
+        // });
+        const response = { data: { user } };
         setUser(response.data.user);
       } catch (error) {
         setUser(null);
