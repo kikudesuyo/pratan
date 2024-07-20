@@ -3,6 +3,6 @@ export const PATHS = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   MYPAGE: "/mypage",
-  WORDDETAIL: "/mypgae/word-detail",
+  WORDDETAIL: "/mypage/word-detail",
   WORDLIST: "/mypage/word-list",
 } as const;
