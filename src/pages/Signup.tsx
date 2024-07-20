@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BodyButton from "@/components/Button/BodyButton";
 import { PATHS } from "@/utils/constants/Paths";
-import { signup } from "@/services/firebase/auth";
+import signup from "@/features/signup";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";

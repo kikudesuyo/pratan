@@ -8,6 +8,7 @@ import { app } from "@/services/firebase/initFirebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 const db = getFirestore(app);
+
 export const registerDataToDb = async (path: string, data: DocumentData) => {
   const docRef = doc(db, path);
   await setDoc(docRef, data);
