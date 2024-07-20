@@ -49,6 +49,13 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
+      <div
+        onClick={closeMenu}
+        className={`pointer-events-auto fixed inset-x-0 top-0 z-20 bg-black opacity-25 ${
+          isOpen ? "block" : "hidden"
+        } `}
+        style={{ height: "100vh" }}
+      />
       <Menu
         isOpen={isOpen}
         onStateChange={handleStateChange}
