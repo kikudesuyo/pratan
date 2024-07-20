@@ -16,7 +16,9 @@ const Header = () => {
         <Link to={PATHS.LANDING}>Pratan📙</Link>
       </div>
       <div className="flex gap-4">
-        {!userId ? (
+        {userId ? (
+          <Sidebar />
+        ) : (
           <>
             <AuthButton
               label="Login"
@@ -30,10 +32,7 @@ const Header = () => {
                 navigate(PATHS.SIGNUP);
               }}
             />
-            <Sidebar />
           </>
-        ) : (
-          <Sidebar />
         )}
       </div>
     </header>
