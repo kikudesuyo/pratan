@@ -1,17 +1,18 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink, useLocation } from "react-router-dom";
 import SidebarButton from "@/components/Button/SidebarButton";
 import { PATHS } from "@/utils/constants/Paths";
-import TestLogo from "@/assets/logo/TestLogo";
-import SignOutLogo from "@/assets/logo/Signout";
-import HomeLogo from "@/assets/logo/Home";
+import TestIcon from "@/assets/icon/TestIcon";
+import SignOutIcon from "@/assets/icon/SignoutIcon";
+import HomeIcon from "@/assets/icon/HomeIcon";
+import CrossIcon from "@/assets/icon/crrossIcon";
 
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
@@ -58,6 +59,14 @@ const Sidebar: React.FC = () => {
         customBurgerIcon={false}
         customCrossIcon={false}
       >
+        <div className=" flex flex-col justify-between">
+          <button
+            onClick={closeMenu}
+            className="absolute right-0 top-0 p-2 text-white hover:text-gray-300"
+          >
+            <CrossIcon size="size-12" />
+          </button>
+        </div>
         <div className="flex h-full flex-col justify-between">
           <div className="flex flex-col gap-8">
             <NavLink
@@ -65,8 +74,8 @@ const Sidebar: React.FC = () => {
               to="/"
               onClick={closeMenu}
             >
-              <div className="flex items-center">
-                <HomeLogo />
+              <div className="flex items-center gap-2">
+                <HomeIcon size="size-6" />
                 <span className="">Home</span>
               </div>
             </NavLink>
@@ -75,8 +84,8 @@ const Sidebar: React.FC = () => {
               to={PATHS.WORDDETAIL}
               onClick={closeMenu}
             >
-              <div className="flex items-center">
-                <TestLogo />
+              <div className="flex items-center gap-2">
+                <TestIcon size="size-6" />
                 <span>Test</span>
               </div>
             </NavLink>
@@ -85,8 +94,8 @@ const Sidebar: React.FC = () => {
               to={PATHS.WORDDETAIL}
               onClick={closeMenu}
             >
-              <div className="flex items-center">
-                <SignOutLogo />
+              <div className="flex items-center gap-2">
+                <SignOutIcon size="size-6" />
                 <span>Signout</span>
               </div>
             </NavLink>

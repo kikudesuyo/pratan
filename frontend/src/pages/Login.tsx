@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { PATHS } from "@/utils/constants/Paths";
-import LearningLogo from "@/assets/imgs/leaning-language.jpg";
+import LearningIcon from "@/assets/imgs/leaning-language.jpg";
 import BodyButton from "@/components/Button/BodyButton";
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
       <h2 className=" text-center text-4xl font-extrabold">Login</h2>
-      <img src={LearningLogo} alt="" />
+      <img src={LearningIcon} alt="" />
       <form className="w-4/5" onSubmit={handleSubmit}>
         <div className="-space-y-px rounded-md shadow-sm">
           <div>
