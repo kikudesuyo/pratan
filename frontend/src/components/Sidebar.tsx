@@ -7,6 +7,7 @@ import TestIcon from "@/assets/icon/TestIcon";
 import SignOutIcon from "@/assets/icon/SignoutIcon";
 import HomeIcon from "@/assets/icon/HomeIcon";
 import CrossIcon from "@/assets/icon/crrossIcon";
+import GitHubIcon from "@/assets/icon/GitHubIcon";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -106,6 +107,10 @@ const Sidebar: React.FC = () => {
                 <span>Signout</span>
               </div>
             </NavLink>
+            <div className="flex flex-1 items-center gap-2 border-b py-2 text-white hover:text-gray-300">
+              <GitHubIcon size="size-6" />
+              <a href="https://github.com/kikudesuyo/pratan">github</a>
+            </div>
           </div>
         </div>
       </Menu>
