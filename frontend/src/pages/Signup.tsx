@@ -3,22 +3,30 @@ import { useNavigate } from "react-router-dom";
 import BodyButton from "@/components/Button/BodyButton";
 import { PATHS } from "@/utils/constants/Paths";
 import LearningLogo from "@/assets/imgs/leaning-language.jpg";
+import { signup } from "@/services/firebase/auth";
+import useUserStore from "@/stores/user";
+import fetchWords from "@/features/fetchWords";
+import { useWordsStore } from "@/stores/words";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    // サインアップ処理をここに実装
-    console.log("Signup attempt with:", name, email, password);
+  const handleClick = async () => {
+    const userId = await signup(email, password);
+    useUserStore.getState().setUserId(userId);
+    const words = await fetchWords(userId);
+    useWordsStore.getState().setWords(words);
+
+    navigate(PATHS.WORDLIST);
   };
 
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
       <h2 className=" text-center text-4xl font-extrabold">Signup</h2>
       <img src={LearningLogo} alt="" />
-      <form className="w-4/5" onSubmit={handleSubmit}>
+      <form className="w-4/5">
         <div className="-space-y-px rounded-md shadow-sm">
           <div>
             <input
@@ -48,7 +56,7 @@ const Signup = () => {
           </div>
         </div>
       </form>
-      <BodyButton label="Signup" func={() => navigate(PATHS.WORDLIST)} />
+      <BodyButton label="Signup" func={handleClick} />
     </div>
   );
 };

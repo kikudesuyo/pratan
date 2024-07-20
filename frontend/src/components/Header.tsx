@@ -4,14 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthButton from "@/components/Button/AuthButton";
 import Sidebar from "@/components/Sidebar";
 import { PATHS } from "@/utils/constants/Paths";
-import { useAuth } from "@/auth/useAuth";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { user, loading } = useAuth();
-  if (loading) {
-    return <></>;
-  }
+  const user = true;
 
   return (
     <header className="sticky top-0 flex h-16 justify-between border-b-2 border-slate-300 bg-white p-3 shadow-md">
