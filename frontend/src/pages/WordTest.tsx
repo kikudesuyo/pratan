@@ -53,7 +53,6 @@ const WordTest = () => {
     <div className="container mx-auto px-4 py-8">
       <header className="mb-8 text-center">
         <TestIcon size="h-12 w-12 mx-auto text-orange-500" />
-        <GitHubIcon size="h-12 w-12 mx-auto text-gray-500" />
         <h1 className="mb-4 text-4xl font-bold text-gray-800">Word Test</h1>
       </header>
 
