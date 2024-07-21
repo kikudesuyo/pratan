@@ -22,10 +22,7 @@ function App() {
             <Route path={PATHS.LANDING} element={<Landing />}></Route>
             <Route path={PATHS.LOGIN} element={<Login />} />
             <Route path={PATHS.SIGNUP} element={<Signup />} />
-            <Route
-              path={PATHS.WORDDETAIL}
-              element={<WordDetail word="eloquent" />}
-            />
+            <Route path={PATHS.WORDDETAIL} element={<WordDetail />} />
             <Route path={PATHS.WORDLIST} element={<WordList />} />
           </Routes>
         </div>
