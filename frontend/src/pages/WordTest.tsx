@@ -6,7 +6,7 @@ import Explanation from "@/components/WordTest/Explanation";
 import { Question } from "@/components/WordTest/types";
 
 const WordTest: React.FC = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0); // -1 represents the start screen
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isStart, setIsStart] = useState(false);
   const [isShowResult, setIsShowResult] = useState(false);
   const [isshowExplanation, setIsShowExplanation] = useState(false);
