@@ -14,12 +14,12 @@ const WordTest: React.FC = () => {
 
   const questions: Question[] = [
     {
-      word: "Eloquent",
+      word: "eloquent",
       definition: "Fluent or persuasive in speaking or writing.",
       example: "She gave an eloquent speech that moved the audience.",
     },
     {
-      word: "Serendipity",
+      word: "serendipity",
       definition:
         "The occurrence and development of events by chance in a happy or beneficial way.",
       example: "The discovery of penicillin was a case of serendipity.",

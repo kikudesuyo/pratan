@@ -1,14 +1,17 @@
 import { registerWord } from "@/features/registerWord";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useUserStore from "@/stores/user";
 import WordCard from "@/pages/WordCard";
 import { useWordsStore, addWord } from "@/stores/words";
+import { PATHS } from "@/utils/constants/Paths";
 
 const WordList = () => {
   const [newWordSpell, setNewWordSpell] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const userId = useUserStore((state) => state.userId);
   const words = useWordsStore((state) => state.words);
+  const navigate = useNavigate();
 
   const handleAddClick = async () => {
     if (!userId) {
@@ -65,6 +68,16 @@ const WordList = () => {
           />
         ))}
       </div>
+      {words.length > 0 && (
+        <div className="flex justify-center">
+          <button
+            className="mt-8 rounded-2xl bg-orange-500 p-4 text-center text-lg font-bold text-white shadow-md transition duration-300 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
+            onClick={() => navigate(PATHS.WORDTEST)}
+          >
+            Start Word Test
+          </button>
+        </div>
+      )}
     </div>
   );
 };
