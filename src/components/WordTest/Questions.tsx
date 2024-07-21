@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Question } from "@/components/WordTest/types";
+import { Question } from "@/utils/types";
 import QuestionExample from "@/components/WordTest/QuestionExample";
 import WordTestButton from "@/components/Button/WordTestButton";
 
@@ -12,7 +12,7 @@ type QuestionProps = {
 };
 
 const Questions: React.FC<QuestionProps> = ({
-  question: { word, definition, example },
+  question: { spell, definition, example },
   currentQuestion,
   totalQuestions,
   onAnswer,
@@ -22,7 +22,7 @@ const Questions: React.FC<QuestionProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const isCorrect = input.toLowerCase().trim() === word.toLowerCase();
+    const isCorrect = input.toLowerCase().trim() === spell.toLowerCase();
     if (isCorrect) {
       onAnswer(true);
     } else {
@@ -42,7 +42,7 @@ const Questions: React.FC<QuestionProps> = ({
       </div>
       <div className="mb-6">
         <p className="mb-2 text-xl font-semibold">Example:</p>
-        <QuestionExample word={word} sentence={example} />
+        <QuestionExample spell={spell} sentence={example} />
       </div>
       <form
         onSubmit={handleSubmit}

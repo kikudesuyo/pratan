@@ -12,10 +12,6 @@ const WordDetail = () => {
 
   useEffect(() => {
     setWord(words.find((w) => w.spell === spell));
-    console.log(
-      words,
-      words.find((w) => w.spell === spell)
-    );
   }, [spell, words]);
 
   const modes = [

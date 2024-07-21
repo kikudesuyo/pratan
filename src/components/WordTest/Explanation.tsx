@@ -1,4 +1,4 @@
-import { Question } from "@/components/WordTest/types";
+import { Question } from "@/utils/types";
 import WordTestButton from "@/components/Button/WordTestButton";
 
 interface ExplanationProps {
@@ -7,7 +7,7 @@ interface ExplanationProps {
 }
 
 const Explanation: React.FC<ExplanationProps> = ({
-  question: { word, definition, example },
+  question: { spell, definition, example },
   onNext,
 }) => {
   return (
@@ -18,7 +18,7 @@ const Explanation: React.FC<ExplanationProps> = ({
       <div className="flex items-center justify-center">
         <div className="mb-6 rounded-xl bg-orange-100 px-8 py-4">
           <h3 className="mb-2 text-center text-3xl font-semibold text-orange-700">
-            {word}
+            {spell}
           </h3>
         </div>
       </div>
