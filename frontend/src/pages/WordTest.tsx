@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Questions from "@/components/WordTest/Questions";
 import Result from "@/components/WordTest/Result";
 import StartScreen from "@/components/WordTest/StartScreen";
+import Explanation from "@/components/WordTest/Explanation";
 import { Question } from "@/components/WordTest/types";
 
 const WordTest: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0); // -1 represents the start screen
   const [isStart, setIsStart] = useState(false);
   const [isShowResult, setIsShowResult] = useState(false);
+  const [isshowExplanation, setIsShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
 
   const questions: Question[] = [
@@ -31,11 +33,19 @@ const WordTest: React.FC = () => {
   const handleAnswer = (isCorrect: boolean) => {
     if (isCorrect) {
       setScore(score + 1);
+      nextQuestion();
     }
+  };
 
+  const handleWrongAnswer = () => {
+    setIsShowExplanation(true);
+  };
+
+  const nextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
+      setIsShowExplanation(false);
     } else {
       setIsShowResult(true);
     }
@@ -45,6 +55,7 @@ const WordTest: React.FC = () => {
     setCurrentQuestion(0);
     setIsShowResult(false);
     setIsStart(false);
+    setIsShowExplanation(false);
     setScore(0);
   };
 
@@ -61,12 +72,20 @@ const WordTest: React.FC = () => {
             totalQuestions={questions.length}
           />
         ) : !isShowResult ? (
-          <Questions
-            question={questions[currentQuestion]}
-            currentQuestion={currentQuestion}
-            totalQuestions={questions.length}
-            onAnswer={handleAnswer}
-          />
+          !isshowExplanation ? (
+            <Questions
+              question={questions[currentQuestion]}
+              currentQuestion={currentQuestion}
+              totalQuestions={questions.length}
+              onAnswer={handleAnswer}
+              onWrongAnswer={handleWrongAnswer}
+            />
+          ) : (
+            <Explanation
+              question={questions[currentQuestion]}
+              onNext={nextQuestion}
+            />
+          )
         ) : (
           <Result
             score={score}

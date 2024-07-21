@@ -6,6 +6,7 @@ interface QuestionProps {
   currentQuestion: number;
   totalQuestions: number;
   onAnswer: (isCorrect: boolean) => void;
+  onWrongAnswer: () => void;
 }
 
 const Questions: React.FC<QuestionProps> = ({
@@ -13,21 +14,19 @@ const Questions: React.FC<QuestionProps> = ({
   currentQuestion,
   totalQuestions,
   onAnswer,
+  onWrongAnswer,
 }) => {
   const [input, setInput] = useState("");
-  const [feedback, setFeedback] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const isCorrect = input.toLowerCase().trim() === word.toLowerCase();
-    setFeedback(isCorrect ? "Correct!" : "Incorrect. Try again.");
     if (isCorrect) {
-      setTimeout(() => {
-        onAnswer(true);
-        setInput("");
-        setFeedback("");
-      }, 1000);
+      onAnswer(true);
+    } else {
+      onWrongAnswer();
     }
+    setInput("");
   };
 
   return (
@@ -36,17 +35,14 @@ const Questions: React.FC<QuestionProps> = ({
         Question {currentQuestion + 1}
       </h2>
       <div className="mb-6">
-        <p className="mb-2 font-semibold">Definition:</p>
-        <p className="text-gray-700">{definition}</p>
+        <p className="mb-2 text-xl font-semibold">Definition:</p>
+        <p className="text-lg text-gray-600">{definition}</p>
       </div>
       <div className="mb-6">
-        <p className="mb-2 font-semibold">Example:</p>
-        <p className="text-gray-700">{example.replace(word, "______")}</p>
+        <p className="mb-2 text-xl font-semibold">Example:</p>
+        <p className="text-gray-600">{example.replace(word, "______")}</p>
       </div>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center space-y-4"
-      >
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
           value={input}
@@ -56,21 +52,11 @@ const Questions: React.FC<QuestionProps> = ({
         />
         <button
           type="submit"
-          className="w-4/5 rounded-md bg-orange-500 p-2 text-center text-white transition duration-300 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
-          "
+          className="w-full rounded-md bg-orange-500 p-2 text-white transition duration-300 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
         >
           Submit
         </button>
       </form>
-      {feedback && (
-        <p
-          className={`mt-4 text-center text-lg font-semibold ${
-            feedback === "Correct!" ? "text-green-500" : "text-red-500"
-          }`}
-        >
-          {feedback}
-        </p>
-      )}
       <p className="mt-6 text-center text-gray-600">
         Question {currentQuestion + 1} of {totalQuestions}
       </p>
