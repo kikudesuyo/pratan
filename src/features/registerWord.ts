@@ -2,13 +2,23 @@ import {
   registerDataToDb,
   updateArrayInDb,
 } from "@/services/firebase/firestore";
-import { fetchNewWord } from "@/services/merriamWebster/fetchNewWord";
+import { fetchWordFromDictionaryapi } from "@/services/merriamWebster/fetchNewWord";
 import { StoredWord, Word } from "@/utils/types";
 import { arrayToMap } from "@/utils/arrayMap";
 import { DocumentReference } from "firebase/firestore";
+import fetchExample from "@/services/wordnik/fetchExample";
 
 export const registerWord = async (userId: string, spell: string) => {
-  const newWord = await fetchNewWord(spell);
+  const rawWord = await fetchWordFromDictionaryapi(spell);
+  const example = await fetchExample(spell);
+  const newWord: Word = {
+    spell: spell,
+    partOfSpeech: rawWord.fl,
+    definitions: rawWord.shortdef,
+    synonyms: rawWord.meta.syns,
+    derivatives: rawWord.meta.stems,
+    example: example,
+  };
   const formattedNewWord: StoredWord = formatWord(newWord);
   const newWordRef = await registerDataToDb(`words/${spell}`, formattedNewWord);
   await updateArrayInDb<DocumentReference>(
@@ -26,5 +36,6 @@ const formatWord = (word: Word): StoredWord => {
     derivatives: word.derivatives,
     partOfSpeech: word.partOfSpeech,
     synonyms: arrayToMap(word.synonyms),
+    example: word.example,
   };
 };

@@ -11,6 +11,7 @@ const formatWord = (word: StoredWord): Word => {
     derivatives: word.derivatives,
     partOfSpeech: word.partOfSpeech,
     synonyms: mapToArray(word.synonyms),
+    example: word.example,
   };
 };
 
