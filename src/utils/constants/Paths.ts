@@ -3,7 +3,7 @@ export const PATHS = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   MYPAGE: "/mypage",
-  WORDDETAIL: "/mypage/word-detail",
+  WORDDETAIL: "/mypage/word-detail/:spell",
   WORDLIST: "/mypage/word-list",
   WORDTEST: "/mypage/word-test",
 } as const;

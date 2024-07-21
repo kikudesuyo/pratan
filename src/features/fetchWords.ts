@@ -1,7 +1,18 @@
-import { Word } from "@/utils/types";
+import { StoredWord, Word } from "@/utils/types";
 import { fetchDataFromDb } from "@/services/firebase/firestore";
 import { User } from "@/utils/types";
 import { getDoc } from "firebase/firestore";
+import { mapToArray } from "@/utils/arrayMap";
+
+const formatWord = (word: StoredWord): Word => {
+  return {
+    spell: word.spell,
+    definitions: word.definitions,
+    derivatives: word.derivatives,
+    partOfSpeech: word.partOfSpeech,
+    synonyms: mapToArray(word.synonyms),
+  };
+};
 
 const fetchWords = async (userId: string) => {
   const userData: User | undefined = (await fetchDataFromDb(
@@ -10,7 +21,8 @@ const fetchWords = async (userId: string) => {
   return Promise.all(
     userData.wordsRefs.map(async (ref) => {
       const docSnap = await getDoc(ref);
-      return docSnap.data() as Word;
+      const storedData = docSnap.data() as StoredWord;
+      return formatWord(storedData);
     })
   );
 };

@@ -11,3 +11,7 @@ export type Word = {
   synonyms: string[][];
   derivatives: string[];
 };
+
+export type StoredWord = Omit<Word, "synonyms"> & {
+  synonyms: { [key: string]: string[] };
+};

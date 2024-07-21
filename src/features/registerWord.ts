@@ -3,13 +3,9 @@ import {
   updateArrayInDb,
 } from "@/services/firebase/firestore";
 import { fetchNewWord } from "@/services/merriamWebster/fetchNewWord";
-import { Word } from "@/utils/types";
-import arrayToMap from "@/utils/arrayToMap";
+import { StoredWord, Word } from "@/utils/types";
+import { arrayToMap } from "@/utils/arrayMap";
 import { DocumentReference } from "firebase/firestore";
-
-type StoredWord = Omit<Word, "synonyms"> & {
-  synonyms: { [key: string]: string[] };
-};
 
 export const registerWord = async (userId: string, spell: string) => {
   const newWord = await fetchNewWord(spell);
