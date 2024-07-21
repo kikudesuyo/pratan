@@ -10,6 +10,7 @@ export type Word = {
   definitions: string[];
   synonyms: string[][];
   derivatives: string[];
+  example: string;
 };
 
 export type StoredWord = Omit<Word, "synonyms"> & {
