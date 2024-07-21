@@ -16,3 +16,7 @@ export type Word = {
 export type StoredWord = Omit<Word, "synonyms"> & {
   synonyms: { [key: string]: string[] };
 };
+
+export type Question = Pick<Word, "spell" | "example"> & {
+  definition: string;
+};

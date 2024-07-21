@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Questions from "@/components/WordTest/Questions";
 import Result from "@/components/WordTest/Result";
 import StartScreen from "@/components/WordTest/StartScreen";
 import Explanation from "@/components/WordTest/Explanation";
-import { Question } from "@/components/WordTest/types";
+import { Question } from "@/utils/types";
+import { useWordsStore } from "@/stores/words";
 
 const WordTest: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -11,20 +12,18 @@ const WordTest: React.FC = () => {
   const [isShowResult, setIsShowResult] = useState(false);
   const [isshowExplanation, setIsShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
+  const [questions, setQuestionns] = useState<Question[]>([]);
+  const words = useWordsStore((state) => state.words);
 
-  const questions: Question[] = [
-    {
-      word: "eloquent",
-      definition: "Fluent or persuasive in speaking or writing.",
-      example: "She gave an eloquent speech that moved the audience.",
-    },
-    {
-      word: "serendipity",
-      definition:
-        "The occurrence and development of events by chance in a happy or beneficial way.",
-      example: "The discovery of penicillin was a case of serendipity.",
-    },
-  ];
+  useEffect(() => {
+    setQuestionns(
+      words.map((word) => ({
+        spell: word.spell,
+        definition: word.definitions[0],
+        example: word.example,
+      }))
+    );
+  }, [words]);
 
   const handleStart = () => {
     setIsStart(true);
