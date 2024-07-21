@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import { PATHS } from "@/utils/constants/Paths";
 import Login from "@/pages/Login";
 import Signup from "@/pages/Signup";
+import WordTest from "@/pages/WordTest";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path={PATHS.SIGNUP} element={<Signup />} />
             <Route path={PATHS.WORDDETAIL} element={<WordDetail />} />
             <Route path={PATHS.WORDLIST} element={<WordList />} />
+            <Route path={PATHS.WORDTEST} element={<WordTest />} />
           </Routes>
         </div>
         <Footer />
