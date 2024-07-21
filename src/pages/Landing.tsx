@@ -50,12 +50,16 @@ const Landing = () => {
           <span>F</span>
           <span>G</span>
         </div>
-        <button onClick={goToPrevious}>
-          <span>&lt;</span>
+        <button className="m-6" onClick={goToPrevious}>
+          <span className="rounded-full bg-gray-200 px-3 py-2 text-3xl  text-gray-600">
+            &lt;
+          </span>
         </button>
         <img className="h-5/6" src={images[currentIndex].src} alt="" />
-        <button onClick={goToNext}>
-          <span>&gt;</span>
+        <button className="m-6" onClick={goToNext}>
+          <span className="rounded-full bg-gray-200 px-3 py-2 text-3xl text-gray-600">
+            &gt;
+          </span>
         </button>
       </div>
       <BodyButton
