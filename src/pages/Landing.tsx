@@ -5,8 +5,9 @@ import { PATHS } from "@/utils/constants/Paths";
 //imgs
 import question from "@/assets/imgs/question.png";
 import sidebar from "@/assets/imgs/sidebar.png";
-import word from "@/assets/imgs/word.png";
+import testStart from "@/assets/imgs/testStart.png";
 import wordList from "@/assets/imgs/wordList.png";
+import definition from "@/assets/imgs/definition.png";
 import wrong from "@/assets/imgs/wrong.png";
 import wordTestScore from "@/assets/imgs/wordTestScore.png";
 
@@ -14,23 +15,24 @@ const Landing = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [
-    { id: 1, src: wordList, alt: "Image 1" },
-    { id: 2, src: sidebar, alt: "Image2" },
-    { id: 3, src: word, alt: "Image3" },
-    { id: 4, src: question, alt: "Image4" },
-    { id: 5, src: wrong, alt: "Image5" },
-    { id: 6, src: wordTestScore, alt: "Image6" },
+  const imageSources = [
+    wordList,
+    sidebar,
+    definition,
+    testStart,
+    question,
+    wrong,
+    wordTestScore,
   ];
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? imageSources.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const goToNext = () => {
-    const isLastSlide = currentIndex === images.length - 1;
+    const isLastSlide = currentIndex === imageSources.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -55,7 +57,7 @@ const Landing = () => {
             &lt;
           </span>
         </button>
-        <img className="h-5/6" src={images[currentIndex].src} alt="" />
+        <img className="h-5/6" src={imageSources[currentIndex]} alt="" />
         <button className="m-6" onClick={goToNext}>
           <span className="rounded-full bg-gray-200 px-3 py-2 text-3xl text-gray-600">
             &gt;
