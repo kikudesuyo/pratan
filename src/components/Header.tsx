@@ -1,6 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-// import { Link } from "react-router-dom";
-
 import AuthButton from "@/components/Button/AuthButton";
 import Sidebar from "@/components/Sidebar";
 import { PATHS } from "@/utils/constants/Paths";
