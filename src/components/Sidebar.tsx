@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { NavLink, useLocation } from "react-router-dom";
 import SidebarButton from "@/components/Button/SidebarButton";
 import { PATHS } from "@/utils/constants/Paths";
+import useUserStore from "@/stores/user";
+import { signOut } from "@/services/firebase/auth";
+
 import TestIcon from "@/assets/icon/TestIcon";
 import SignOutIcon from "@/assets/icon/SignoutIcon";
 import HomeIcon from "@/assets/icon/HomeIcon";
@@ -11,7 +15,9 @@ import GitHubIcon from "@/assets/icon/GitHubIcon";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
+  const clearUserId = useUserStore((state) => state.clearUserId);
 
   useEffect(() => {
     setIsOpen(false);
@@ -19,6 +25,13 @@ const Sidebar: React.FC = () => {
 
   const handleStateChange = (state: { isOpen: boolean }) => {
     setIsOpen(state.isOpen);
+  };
+
+  const handleSignout = async () => {
+    await signOut();
+    clearUserId();
+    closeMenu();
+    navigate(PATHS.LANDING);
   };
 
   const toggleMenu = () => {
@@ -97,16 +110,15 @@ const Sidebar: React.FC = () => {
                 <span>Test</span>
               </div>
             </NavLink>
-            <NavLink
+            <button
               className="block flex-1 border-b py-2 text-white hover:text-gray-300"
-              to={PATHS.LANDING}
-              onClick={closeMenu}
+              onClick={handleSignout}
             >
               <div className="flex items-center gap-2">
                 <SignOutIcon size="size-6" />
                 <span>Signout</span>
               </div>
-            </NavLink>
+            </button>
             <div className="flex flex-1 items-center gap-2 border-b py-2 text-white hover:text-gray-300">
               <GitHubIcon size="size-6" />
               <a href="https://github.com/kikudesuyo/pratan">github</a>
