@@ -8,7 +8,7 @@ import useUserStore from "@/stores/user";
 import { signOut } from "@/services/firebase/auth";
 
 import TestIcon from "@/assets/icon/TestIcon";
-import SignOutIcon from "@/assets/icon/SignoutIcon";
+import SignOutIcon from "@/assets/icon/SignOutIcon";
 import HomeIcon from "@/assets/icon/HomeIcon";
 import CrossIcon from "@/assets/icon/crrossIcon";
 import GitHubIcon from "@/assets/icon/GitHubIcon";
