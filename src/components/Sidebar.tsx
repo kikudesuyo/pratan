@@ -27,7 +27,7 @@ const Sidebar: React.FC = () => {
     setIsOpen(state.isOpen);
   };
 
-  const handleSignout = async () => {
+  const handleSignOut = async () => {
     await signOut();
     clearUserId();
     closeMenu();
@@ -112,7 +112,7 @@ const Sidebar: React.FC = () => {
             </NavLink>
             <button
               className="block flex-1 border-b py-2 text-white hover:text-gray-300"
-              onClick={handleSignout}
+              onClick={handleSignOut}
             >
               <div className="flex items-center gap-2">
                 <SignOutIcon size="size-6" />
