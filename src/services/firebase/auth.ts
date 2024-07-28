@@ -30,3 +30,12 @@ export const login = async (email: string, password: string) => {
     throw Error("failed to log in user");
   }
 };
+
+export const signOut = async () => {
+  const auth = getAuth(app);
+  try {
+    await auth.signOut();
+  } catch (e) {
+    throw Error("failed to sign out user");
+  }
+};
