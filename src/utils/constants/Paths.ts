@@ -1,6 +1,6 @@
 export const PATHS = {
   LANDING: "/",
-  LOGIN: "/logIn",
+  LOGIN: "/login",
   SIGNUP: "/signup",
   WORDDETAIL: "/mypage/word-detail/:spell",
   WORDLIST: "/mypage/word-list",
