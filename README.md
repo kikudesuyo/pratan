@@ -14,6 +14,8 @@ Pratan is a new web application that combines English vocabulary learning with d
 
 ### Tech Stack
 
+[![My Skills](https://skillicons.dev/icons?i=react,ts,vite,tailwind,firebase)](https://skillicons.dev)
+
 - React + TypeScript + Vite
 - Tailwind CSS
 - Firebase (App Hosting, Authentication, Firestore Database)
@@ -49,6 +51,8 @@ Pratan は、英単語と辞書の機能を兼ね揃えた新しい Web アプ�
 - 演習機能: 単語のテスト
 
 ### 技術スタック
+
+[![My Skills](https://skillicons.dev/icons?i=react,ts,vite,tailwind,firebase)](https://skillicons.dev)
 
 - React + TypeScript + Vite
 - Tailwind CSS
