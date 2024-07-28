@@ -16,12 +16,16 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const userId = await login(email, password);
-    useUserStore.getState().setUserId(userId);
-    const words = await fetchWords(userId);
-    useWordsStore.getState().setWords(words);
-
-    navigate(PATHS.WORDLIST);
+    try {
+      const userId = await login(email, password);
+      useUserStore.getState().setUserId(userId);
+      const words = await fetchWords(userId);
+      useWordsStore.getState().setWords(words);
+      navigate(PATHS.WORDLIST);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to login");
+    }
   };
 
   return (
