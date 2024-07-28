@@ -20,7 +20,7 @@ export const signup = async (email: string, password: string) => {
   }
 };
 
-export const login = async (email: string, password: string) => {
+export const logIn = async (email: string, password: string) => {
   const auth = getAuth(app);
   try {
     const credential = await signInWithEmailAndPassword(auth, email, password);

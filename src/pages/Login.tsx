@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { PATHS } from "@/utils/constants/Paths";
 import LearningIcon from "@/assets/imgs/leaning-language.jpg";
 import BodyButton from "@/components/Button/BodyButton";
-import { login } from "@/services/firebase/auth";
+import { logIn } from "@/services/firebase/auth";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      const userId = await login(email, password);
+      const userId = await logIn(email, password);
       useUserStore.getState().setUserId(userId);
       const words = await fetchWords(userId);
       useWordsStore.getState().setWords(words);
