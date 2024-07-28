@@ -18,6 +18,14 @@ const WordList = () => {
       console.error("User is not logged in");
       return;
     }
+    if (
+      words.some(
+        (word) => word.spell.toLowerCase() === newWordSpell.toLowerCase()
+      )
+    ) {
+      alert("This word is already in the list");
+      throw new Error("This word is already in the list");
+    }
     const word = await registerWord(userId, newWordSpell);
     addWord(word);
     setNewWordSpell("");
