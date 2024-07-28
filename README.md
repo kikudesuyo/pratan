@@ -1,30 +1,79 @@
-# React + TypeScript + Vite
+# Pratan - 英単語学習アプリ / English Vocabulary Learning App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[English](#english) | [日本語](#日本語)
 
-Currently, two official plugins are available:
+## English
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pratan is a new web application that combines English vocabulary learning with dictionary functionality.
 
-## Expanding the ESLint configuration
+### Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Word List: Create and manage your personal vocabulary lists
+- Dictionary Function: Check definitions, synonyms, and derivatives
+- Exercise Function: Test your knowledge of words
 
-- Configure the top-level `parserOptions` property like this:
+### Tech Stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+[![My Skills](https://skillicons.dev/icons?i=react,ts,vite,tailwind,firebase)](https://skillicons.dev)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- React + TypeScript + Vite
+- Tailwind CSS
+- Firebase (App Hosting, Authentication, Firestore Database)
+
+### Installation and Setup
+
+1. Clone the repository:
+   `git clone https://github.com/kikudesuyo/pratan.git`
+
+2. Navigate to the project directory:
+   `cd pratan`
+
+3. Install dependencies:
+   `npm install`
+
+4. Environment Configuration:
+   Create a `pratan/.env` file and set the necessary environment variables.
+
+### How to Use
+
+1. Create an account or log in
+2. Add new words in the "WordList" section
+3. Test the words you've registered in the "WordTest" section
+
+## 日本語
+
+Pratan は、英単語と辞書の機能を兼ね揃えた新しい Web アプリケーションです。
+
+### 機能
+
+- 単語帳機能: 自分だけの単語リストを作成・管理
+- 辞書機能: 定義、類義語、派生語を確認
+- 演習機能: 単語のテスト
+
+### 技術スタック
+
+[![My Skills](https://skillicons.dev/icons?i=react,ts,vite,tailwind,firebase)](https://skillicons.dev)
+
+- React + TypeScript + Vite
+- Tailwind CSS
+- Firebase (App Hosting, Authentication, Firestore Database)
+
+### インストールと設定
+
+1. リポジトリをクローン:
+   `git clone https://github.com/kikudesuyo/pratan.git`
+
+2. プロジェクトディレクトリに移動:
+   `cd pratan`
+
+3. 依存関係をインストール:
+   `npm install`
+
+4. 環境設定:
+   `pratan/.env`ファイルを作成して、必要な環境変数を設定
+
+### 使用方法
+
+1. アカウントを作成またはログイン
+2. 「WordList」セクションで新しい単語を追加
+3. 「WordTest」セクションで登録した単語のテスト
