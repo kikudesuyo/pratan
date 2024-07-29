@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BodyButton from "@/components/Button/BodyButton";
 import { PATHS } from "@/utils/constants/Paths";
-import signup from "@/features/signup";
+import signUp from "@/features/signup";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
@@ -16,12 +16,16 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    const userId = await signup(email, password);
-    useUserStore.getState().setUserId(userId);
-    const words = await fetchWords(userId);
-    useWordsStore.getState().setWords(words);
-
-    navigate(PATHS.WORDLIST);
+    try {
+      const userId = await signUp(email, password);
+      useUserStore.getState().setUserId(userId);
+      const words = await fetchWords(userId);
+      useWordsStore.getState().setWords(words);
+      navigate(PATHS.WORDLIST);
+    } catch (e) {
+      console.error(e);
+      alert("Failed to signup");
+    }
   };
 
   return (

@@ -8,8 +8,8 @@ import ScrollToTop from "@/utils/ScrollTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PATHS } from "@/utils/constants/Paths";
-import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
+import Login from "@/pages/LogIn";
+import Signup from "@/pages/SignUp";
 import WordTest from "@/pages/WordTest";
 
 function App() {
