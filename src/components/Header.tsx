@@ -6,7 +6,7 @@ import useUserStore from "@/stores/user";
 
 const Header = () => {
   const navigate = useNavigate();
-  const userId = useUserStore((state) => state.userId);
+  const userId = useUserStore.getState().userId;
 
   return (
     <header className="sticky top-0 z-10 flex h-16 justify-between border-b-2 border-slate-300 bg-white p-3 shadow-md">
