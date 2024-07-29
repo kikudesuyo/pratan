@@ -8,7 +8,7 @@ import { addWord } from "@/features/addWord";
 const WordList = () => {
   const [newWordSpell, setNewWordSpell] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const words = useWordsStore((state) => state.words);
+  const words = useWordsStore.getState().words;
   const navigate = useNavigate();
 
   const handleAddClick = async () => {
