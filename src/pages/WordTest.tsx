@@ -13,7 +13,7 @@ const WordTest: React.FC = () => {
   const [isshowExplanation, setIsShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [questions, setQuestionns] = useState<Question[]>([]);
-  const words = useWordsStore((state) => state.words);
+  const words = useWordsStore.getState().words;
 
   useEffect(() => {
     setQuestionns(

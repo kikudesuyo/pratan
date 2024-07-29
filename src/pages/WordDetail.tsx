@@ -7,7 +7,7 @@ const WordDetail = () => {
   const [currentMode, setCurrentMode] =
     useState<(typeof modes)[number]["id"]>("definitions");
   const { spell } = useParams();
-  const words = useWordsStore((state) => state.words);
+  const words = useWordsStore.getState().words;
   const [word, setWord] = useState<Word>();
 
   useEffect(() => {

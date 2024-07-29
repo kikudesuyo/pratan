@@ -1,25 +1,18 @@
-import { registerWord } from "@/features/registerWord";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import useUserStore from "@/stores/user";
 import WordCard from "@/pages/WordCard";
-import { useWordsStore, addWord } from "@/stores/words";
+import { useWordsStore } from "@/stores/words";
 import { PATHS } from "@/utils/constants/Paths";
+import { addWord } from "@/features/addWord";
 
 const WordList = () => {
   const [newWordSpell, setNewWordSpell] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const userId = useUserStore((state) => state.userId);
-  const words = useWordsStore((state) => state.words);
+  const words = useWordsStore.getState().words;
   const navigate = useNavigate();
 
   const handleAddClick = async () => {
-    if (!userId) {
-      console.error("User is not logged in");
-      return;
-    }
-    const word = await registerWord(userId, newWordSpell);
-    addWord(word);
+    await addWord(newWordSpell);
     setNewWordSpell("");
   };
 
