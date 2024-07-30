@@ -9,7 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PATHS } from "@/utils/constants/Paths";
 import LogIn from "@/pages/LogIn";
-import Signup from "@/pages/SignUp";
+import SignUp from "@/pages/SignUp";
 import WordTest from "@/pages/WordTest";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path={PATHS.LANDING} element={<Landing />}></Route>
             <Route path={PATHS.LOGIN} element={<LogIn />} />
-            <Route path={PATHS.SIGNUP} element={<Signup />} />
+            <Route path={PATHS.SIGNUP} element={<SignUp />} />
             <Route path={PATHS.WORDDETAIL} element={<WordDetail />} />
             <Route path={PATHS.WORDLIST} element={<WordList />} />
             <Route path={PATHS.WORDTEST} element={<WordTest />} />
