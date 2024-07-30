@@ -10,7 +10,7 @@ import LearningIcon from "@/assets/imgs/leaning-language.jpg";
 import SignupIcon from "@/assets/icon/SignupIcon";
 import AuthInput from "@/components/Input/AuthInput";
 
-const Signup = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -48,4 +48,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
