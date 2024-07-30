@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BodyButton from "@/components/Button/BodyButton";
 import { PATHS } from "@/utils/constants/Paths";
-import signUp from "@/features/signup";
+import signUp from "@/features/signUp";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
