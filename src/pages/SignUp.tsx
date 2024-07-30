@@ -7,7 +7,7 @@ import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
 import LearningIcon from "@/assets/imgs/leaning-language.jpg";
-import SignupIcon from "@/assets/icon/SignupIcon";
+import SignUpIcon from "@/assets/icon/SignUpIcon";
 import AuthInput from "@/components/Input/AuthInput";
 
 const SignUp = () => {
@@ -31,7 +31,7 @@ const SignUp = () => {
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
       <div className="mb-8 flex gap-2">
-        <SignupIcon size="w-12 h-12 " />
+        <SignUpIcon size="w-12 h-12 " />
         <h2 className="text-4xl font-extrabold">Signup</h2>
       </div>
       <img src={LearningIcon} alt="" />

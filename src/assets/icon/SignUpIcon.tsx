@@ -1,6 +1,6 @@
 import { Size } from "@/assets/icon/type";
 
-const SignupIcon = ({ size }: Size) => {
+const SignUpIcon = ({ size }: Size) => {
   return (
     <svg
       className={size}
@@ -19,4 +19,4 @@ const SignupIcon = ({ size }: Size) => {
   );
 };
 
-export default SignupIcon;
+export default SignUpIcon;
