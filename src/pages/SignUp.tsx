@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BodyButton from "@/components/Button/BodyButton";
 import { PATHS } from "@/utils/constants/Paths";
-import signUp from "@/features/signup";
+import signUp from "@/features/signUp";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
 import LearningIcon from "@/assets/imgs/leaning-language.jpg";
-import SignupIcon from "@/assets/icon/SignupIcon";
+import SignUpIcon from "@/assets/icon/SignUpIcon";
 import AuthInput from "@/components/Input/AuthInput";
 
-const Signup = () => {
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Signup = () => {
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
       <div className="mb-8 flex gap-2">
-        <SignupIcon size="w-12 h-12 " />
+        <SignUpIcon size="w-12 h-12 " />
         <h2 className="text-4xl font-extrabold">Signup</h2>
       </div>
       <img src={LearningIcon} alt="" />
@@ -48,4 +48,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;

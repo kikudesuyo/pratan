@@ -7,10 +7,10 @@ import { logIn } from "@/services/firebase/auth";
 import useUserStore from "@/stores/user";
 import fetchWords from "@/features/fetchWords";
 import { useWordsStore } from "@/stores/words";
-import LoginIcon from "@/assets/icon/LoginIcon";
+import LogInIcon from "@/assets/icon/LogInIcon";
 import AuthInput from "@/components/Input/AuthInput";
 
-const Login = () => {
+const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Login = () => {
   return (
     <div className="mt-8 flex flex-col items-center justify-center gap-8">
       <div className="mb-8 flex gap-2">
-        <LoginIcon size="w-12 h-12" />
+        <LogInIcon size="w-12 h-12" />
         <h2 className="text-4xl font-extrabold">Login</h2>
       </div>
       <img src={LearningIcon} alt="" />
@@ -55,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LogIn;

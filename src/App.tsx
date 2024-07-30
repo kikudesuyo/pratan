@@ -8,8 +8,8 @@ import ScrollToTop from "@/utils/ScrollTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PATHS } from "@/utils/constants/Paths";
-import Login from "@/pages/LogIn";
-import Signup from "@/pages/SignUp";
+import LogIn from "@/pages/LogIn";
+import SignUp from "@/pages/SignUp";
 import WordTest from "@/pages/WordTest";
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
         <div className="grow">
           <Routes>
             <Route path={PATHS.LANDING} element={<Landing />}></Route>
-            <Route path={PATHS.LOGIN} element={<Login />} />
-            <Route path={PATHS.SIGNUP} element={<Signup />} />
+            <Route path={PATHS.LOGIN} element={<LogIn />} />
+            <Route path={PATHS.SIGNUP} element={<SignUp />} />
             <Route path={PATHS.WORDDETAIL} element={<WordDetail />} />
             <Route path={PATHS.WORDLIST} element={<WordList />} />
             <Route path={PATHS.WORDTEST} element={<WordTest />} />
