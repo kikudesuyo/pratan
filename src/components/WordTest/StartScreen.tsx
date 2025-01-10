@@ -15,7 +15,8 @@ const StartScreen: React.FC<StartScreenProps> = ({
         Welcome to the Word Test!
       </h2>
       <p className="text-center text-lg">
-        Test your vocabulary with {totalQuestions} questions.
+        Test your vocabulary with{" "}
+        <span className="text-xl font-bold">{totalQuestions}</span> questions.
       </p>
       <p className="text-center text-lg">Good luck!</p>
       <div className="flex items-center justify-center space-y-4">
